@@ -1,4 +1,5 @@
 /* styles.css */
+
 body {
   background-color: #0a0a23;
   color: #ffffff;
@@ -6,25 +7,38 @@ body {
 }
 
 #game {
-  max-width: 500px;
+  max-width: 600px;
   margin: 30px auto;
-  padding: 10px;
-  background-color: #ffffff;
-  color: #0a0a23;
+  padding: 20px;
+  background-color: #1f1f3d;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  margin: 0;
+  padding-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
 }
 
 #stats,
 #controls {
-  border: 1px solid #0a0a23;
-  padding: 5px;
-  margin-bottom: 10px;
+  border: 2px solid #ffac33;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 #monsterStats {
   display: none;
-  border: 1px solid #0a0a23;
-  padding: 5px;
-  background-color: #c70d0d;
+  border: 2px solid #c70d0d;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #520303;
+  margin-bottom: 20px;
 }
 
 .stat {
@@ -36,11 +50,33 @@ button {
   color: #0a0a23;
   background-color: #feac32;
   background-image: linear-gradient(#fecc4c, #ffac33);
-  border: 3px solid #feac32;
+  border: 2px solid #feac32;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  margin: 0 5px;
 }
 
-#game {
-  max-width: 500px;
-  margin: 0 auto; /* Center horizontally */
-  /* ... other styles ... */
+button:hover {
+  background-color: #ffac33;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+#text {
+  background-color: #29294f;
+  padding: 20px;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+#text p {
+  margin: 0 0 10px 0;
+}
+
+#text p:last-child {
+  margin-bottom: 0;
 }
