@@ -1,19 +1,14 @@
 /* styles.css */
 
-/* body {
-  background-color: #0a0a23;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-} */
 body {
-  background-image: url('dragon.png'); /* Path to your dragon image */
-  background-color: #0a0a23;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  background-size: cover; /* Ensures the image covers the entire background */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-position: center center; /* Centers the image */
-  background-attachment: fixed; /* Fixes the image in place */
+    background-image: url('castle.png'); /* Path to your dragon image */
+    background-color: #b2b2e8;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed; /* Fixes the image in place */
 }
 
 #game {
@@ -89,4 +84,20 @@ button:active {
 
 #text p:last-child {
   margin-bottom: 0;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+#dragon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px; /* Adjust size as needed */
+  animation: shake 2s infinite; /* Example animation */
 }
