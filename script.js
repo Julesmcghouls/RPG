@@ -191,6 +191,8 @@ function goFight() {
   monsterHealthText.innerText = monsterHealth;
 }
 
+let weaponBreaks = 0; // Initialize a counter for weapon breaks
+
 function attack() {
   text.innerText = "The " + monsters[fighting].name + " attacks.";
   text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
@@ -215,12 +217,18 @@ function attack() {
     }
   }
 
-  if (Math.random() <= .1 && inventory.length !== 1) {
-    text.innerText += " Your " + inventory.pop() + " breaks.";
+  // Weapon break chance with textual cue
+  if (Math.random() <= 0.1 && inventory.length !== 1) {
+    let brokenWeapon = inventory.pop(); // Remove the broken weapon
     currentWeapon--;
+    weaponBreaks++; // Increment weapon break counter
     updateInventory();
+    
+    // Notify the player that the weapon has broken
+    text.innerText += " Your " + brokenWeapon + " breaks! This has happened " + weaponBreaks + " times.";
   }
 }
+
 
 function getMonsterAttackValue(level) {
   const hit = (level * 5) - (Math.floor(Math.random() * xp));
