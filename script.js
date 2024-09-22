@@ -153,14 +153,20 @@ function sellWeapon() {
   if (inventory.length > 1) {
     gold += 15;
     goldText.innerText = gold;
-    let currentWeapon = inventory.shift();
-    text.innerText = "You sold a " + currentWeapon + ".";
-    text.innerText += " In your inventory you have: " + inventory;
+
+    // Remove the current weapon and downgrade to the previous one
+    let soldWeapon = inventory.pop(); // Remove and store the last weapon
+    currentWeapon--;
+    text.innerText = "You sold your " + soldWeapon + ".";
+    
+    // Set the new weapon to the one before the sold weapon
+    text.innerText += " You now have a " + weapons[currentWeapon].name + ".";
     updateInventory();
   } else {
     text.innerText = "Don't sell your only weapon!";
   }
 }
+
 
 function fightSlime() {
   fighting = 0;
