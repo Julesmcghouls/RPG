@@ -77,7 +77,7 @@ text: 'The monster screams "Arg!" as it dies. You gain experience points and fin
 name: "lose",
 "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
 "button functions": [restart, restart, restart],
-text: "You die. &#x2620;"
+text: "You have died. &#x2620;"
 },
 { 
 name: "win", 
@@ -186,17 +186,27 @@ function goFight() {
   monsterName.innerText = monsters[fighting].name;
   monsterHealthText.innerText = monsterHealth;
 
-  // Add knight image to the battle scene
-  const knightImage = document.createElement('img');
-  knightImage.src = 'knight.png'; // Path to your knight image
-  knightImage.alt = 'Knight ready for battle';
-  knightImage.id = 'battleKnight';
+  // Remove existing images before adding new ones
+  document.querySelectorAll('.battleImage').forEach(img => img.remove());
 
-  // Check if knight image is already displayed
-  if (!document.querySelector('#battleKnight')) {
-      document.querySelector('#text').prepend(knightImage);
+  // Add knight image only if fighting the dragon
+  if (monsters[fighting].name === "dragon") {
+      const knightImage = document.createElement('img');
+      knightImage.src = 'knight.png'; 
+      knightImage.alt = 'Knight ready for battle';
+      knightImage.classList.add('battleImage', 'knight');
+
+      const dragonImage = document.createElement('img');
+      dragonImage.src = 'dragon.png'; 
+      dragonImage.alt = 'Dragon ready for battle';
+      dragonImage.classList.add('battleImage', 'dragon');
+
+      // Append both images side by side
+      const textDiv = document.querySelector('#text');
+      textDiv.prepend(knightImage, dragonImage);
   }
 }
+
 
 // function goFight() {
 // update(locations[3]);
@@ -256,6 +266,19 @@ update(locations[4]);
 
 function lose() {
 update(locations[5]);
+
+// Remove existing images before adding new ones
+document.querySelectorAll('.battleImage').forEach(img => img.remove());
+
+// Add "you lose" image
+const loseImage = document.createElement('img');
+loseImage.src = 'lose.png'; 
+loseImage.alt = 'Player has died';
+loseImage.classList.add('battleImage', 'lose');
+
+// Append "you lose" image
+const textDiv = document.querySelector('#text');
+textDiv.prepend(loseImage);
 }
 
 function winGame() {

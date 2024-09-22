@@ -91,3 +91,28 @@ button:active {
   margin: 0 auto;
   padding-bottom: 10px;
 }
+
+.battleImage {
+  width: 150px;
+  height: auto;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.knight {
+  width: 30px; /* Smaller size for the knight */
+}
+
+.dragon {
+  width: 250px; 
+}
+
+#text {
+  text-align: center;
+}
+
+.lose {
+  width: 250px;
+  display: block;
+  margin: 20px auto;
+}
