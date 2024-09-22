@@ -1,5 +1,3 @@
-/* styles.css */
-
 body {
     background-image: url('castle.png'); /* Path to your dragon image */
     background-color: #b2b2e8;
@@ -84,4 +82,12 @@ button:active {
 
 #text p:last-child {
   margin-bottom: 0;
+}
+
+#battleKnight {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 10px;
 }

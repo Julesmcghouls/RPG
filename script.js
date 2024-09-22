@@ -16,6 +16,8 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
+
+
 const weapons = [
 { name: 'stick', power: 5 },
 { name: 'dagger', power: 30 },
@@ -39,6 +41,7 @@ level: 20,
 health: 300
 }
 ]
+
 const locations = [
 {
 name: "town square",
@@ -177,12 +180,31 @@ goFight();
 }
 
 function goFight() {
-update(locations[3]);
-monsterHealth = monsters[fighting].health;
-monsterStats.style.display = "block";
-monsterName.innerText = monsters[fighting].name;
-monsterHealthText.innerText = monsterHealth;
+  update(locations[3]);
+  monsterHealth = monsters[fighting].health;
+  monsterStats.style.display = "block";
+  monsterName.innerText = monsters[fighting].name;
+  monsterHealthText.innerText = monsterHealth;
+
+  // Add knight image to the battle scene
+  const knightImage = document.createElement('img');
+  knightImage.src = 'knight.png'; // Path to your knight image
+  knightImage.alt = 'Knight ready for battle';
+  knightImage.id = 'battleKnight';
+
+  // Check if knight image is already displayed
+  if (!document.querySelector('#battleKnight')) {
+      document.querySelector('#text').prepend(knightImage);
+  }
 }
+
+// function goFight() {
+// update(locations[3]);
+// monsterHealth = monsters[fighting].health;
+// monsterStats.style.display = "block";
+// monsterName.innerText = monsters[fighting].name;
+// monsterHealthText.innerText = monsterHealth;
+// }
 
 function attack() {
 text.innerText = "The " + monsters[fighting].name + " attacks.";
@@ -285,4 +307,15 @@ if (health <= 0) {
     lose();
 }
 }
+}
+
+window.addEventListener('load', function () {
+  if (!validPath(window.location.pathname)) {
+      window.location.href = '404.html';
+  }
+});
+
+function validPath(path) {
+  const validPaths = ['/', '/store', '/cave', '/fight']; // Add your valid paths
+  return validPaths.includes(path);
 }
