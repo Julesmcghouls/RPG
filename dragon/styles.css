@@ -1,12 +1,12 @@
 body {
-    background-image: url('castle.png'); /* Path to your dragon image */
-    background-color: #b2b2e8;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center center; /* Centers the image */
-    background-attachment: fixed; /* Fixes the image in place */
+  background-image: url('castle.png');
+  background-color: #b2b2e8;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 #game {
@@ -100,19 +100,25 @@ button:active {
 }
 
 .knight {
-  width: 30px; /* Smaller size for the knight */
+  width: 30px;
 }
 
 .dragon {
   width: 250px; 
 }
 
-#text {
-  text-align: center;
-}
-
 .lose {
   width: 250px;
   display: block;
   margin: 20px auto;
+}
+
+/* Horse Racing Carnival Styles */
+@keyframes pulse {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0.7;
+  }
 }

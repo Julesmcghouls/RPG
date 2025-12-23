@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="./styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dragon</title>
+    <title>D. RPG</title>
 </head>
 <body>
     <main id="game">
         <header>
-            <h1>Dragon</h1>
+            <h1>Tavern</h1>
         </header>
         <section id="stats">
             <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
@@ -19,16 +19,38 @@
         <nav id="controls">
             <button id="button1">Go to store</button>
             <button id="button2">Go to cave</button>
-            <button id="button3">Fight dragon</button>
+            <button id="button3">Go to carnival</button>
         </nav>
         <section id="monsterStats">
             <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
             <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
         </section>
         <div id="text">
-        You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
+            You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
         </div>
     </main>
-    <script src="./script.js"></script>
+    
+    <!-- Configuration and data -->
+    <script src="./js/config.js"></script>
+    
+    <!-- State management -->
+    <script src="./js/state.js"></script>
+    
+    <!-- DOM references -->
+    <script src="./js/dom.js"></script>
+    
+    <!-- Game modules -->
+    <script src="./js/monsters.js"></script>
+    <script src="./js/store.js"></script>
+    <script src="./js/combat.js"></script>
+    <script src="./js/minigames.js"></script>
+    <script src="./js/carnival.js"></script>
+    <script src="./js/dicegame.js"></script>
+    <script src="./js/tavern.js"></script>
+    <script src="./js/chars.js"></script>
+    <script src="./js/navigation.js"></script>
+    
+    <!-- game initialization -->
+    <script src="./js/game.js"></script>
 </body>
 </html>
